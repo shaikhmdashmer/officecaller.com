@@ -1,0 +1,23 @@
+<svg id="design" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="411" height="183.375" viewBox="0 0 411 183.375">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#89a2f8"/>
+      <stop offset="1" stop-color="#2f4bef"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#098388"/>
+      <stop offset="1" stop-color="#196a6d"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <path id="Path_23400" data-name="Path 23400" d="M0,0H411V158.574S164.1,241.787,0,103.367Z" fill="url(#linear-gradient)"/>
+    </clipPath>
+  </defs>
+  <path id="Path_22761" data-name="Path 22761" d="M0,0H411V156.332S164.1,247.066,0,96.135Z" fill="url(#linear-gradient-2)"/>
+  <g id="Mask_Group_487" data-name="Mask Group 487" clip-path="url(#clip-path)">
+    <g id="Group_5160" data-name="Group 5160" transform="translate(29 -299.895)">
+      <ellipse id="Ellipse_177" data-name="Ellipse 177" cx="275" cy="252.5" rx="275" ry="252.5" transform="translate(0 -0.105)" fill="rgba(255,255,255,0.08)"/>
+      <ellipse id="Ellipse_176" data-name="Ellipse 176" cx="202.5" cy="185" rx="202.5" ry="185" transform="translate(82 149.895)" fill="rgba(255,255,255,0.08)"/>
+      <ellipse id="Ellipse_175" data-name="Ellipse 175" cx="149" cy="136.5" rx="149" ry="136.5" transform="translate(137 271.895)" fill="rgba(255,255,255,0.08)"/>
+    </g>
+  </g>
+</svg>

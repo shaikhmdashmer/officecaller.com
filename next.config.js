@@ -1,11 +1,11 @@
-// module.exports = {
-//   reactStrictMode: true,
-// }
-
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
+  trailingSlash: true,
   images: {
-    //enter the domain or subdomain where you have WordPress installed
-    domains: ['officecaller.technoallianceindia.com'],
-  },
+    loader: 'imgix',
+    path: '/',
+  }
 }
+
+module.exports = nextConfig

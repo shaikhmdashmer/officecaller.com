@@ -9,11 +9,11 @@ import { getPosts } from '../utils/wordpress';
 import BannerPost from '../components/BannerPost'
 
 export default function Home({posts}) {
-    const jsxPosts = posts.map((post) => {
-    //const featuredMedia = post['_embedded']['wp:featuredmedia'][0];
-    //const featuredMedia = post['images'][0];
-    return <BannerPost post={post} key={post.id} />;
-});
+//     const jsxPosts = posts.map((post) => {
+//     //const featuredMedia = post['_embedded']['wp:featuredmedia'][0];
+//     //const featuredMedia = post['images'][0];
+//     return <BannerPost post={post} key={post.id} />;
+// });
   return (
     <>
       <Head>
@@ -27,7 +27,24 @@ export default function Home({posts}) {
       {/* officecaller-banner-section */}
       <div className="officecaller-banner-section">
           <div className="container">
-              {jsxPosts}
+              {/* {jsxPosts} */}
+              <div className="row">
+                <div className="col-md-6 col-sm-12">
+                    <div>
+                        <h1>The Great <strong>Business Communication platform</strong> that is easy to use and flexible</h1>
+                      </div>
+                      <div className="space10"></div>
+                      <a href="https://play.google.com/store/apps/details?id=com.app.officecaller" target="_blank" rel="noreferrer" className="btn btn-primary btn-lg btn-rounded btn-lgtleftright">Download Now
+                      
+                       
+                         <i className="fa fa-download"></i></a>
+                         </div>
+                         <div className="col-md-6 col-sm-12">
+                            <div className="officecaller-banner-imgslide">
+                                <img src="/images/callillustrator.svg" alt="StrippedString" />
+                </div>
+            </div>
+        </div>
           </div>
       </div>
 
@@ -213,14 +230,14 @@ export default function Home({posts}) {
   )
 }
 
-export async function getStaticProps({ params }) {
-    const posts = await getPosts();
-    // const media = await getMedia();
-    return {
-        props: {
-        posts,
-        // media
-    },
-    revalidate: 10, // In seconds
-    };
-}
+// export async function getStaticProps({ params }) {
+//     const posts = await getPosts();
+//     // const media = await getMedia();
+//     return {
+//         props: {
+//         posts,
+//         // media
+//     },
+//     revalidate: 10, // In seconds
+//     };
+// }

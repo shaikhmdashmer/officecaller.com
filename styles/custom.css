@@ -16,11 +16,12 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+body  {
   background: #fff;
   color: #222;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
+ 
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,6 +30,10 @@ h1, h2, h3, h4, h5, h6 {
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0 0 15px 0;
+}
+.nav-link {
+
+  color: white;
 }
 
 h1 {
@@ -42,10 +47,12 @@ h2 {
 p {
   font-weight: 500;
 }
+ul{
 
+}
 a {
-  text-decoration: none;
-  outline: none;
+  text-decoration: none !important;
+  outline: none !important;
 }
 
 img {
@@ -1830,7 +1837,7 @@ img {
 
 .footer-section ul li,
 .footer-section ul li a {
-  color: #fff;
+  color: #fff !important;
 }
 
 .footer-section ul li a:hover {

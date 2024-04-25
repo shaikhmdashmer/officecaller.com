@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
 import logoPicFooter from '/images/logo-footer.svg'
+import ContactFormFooter from './Enquiryfooter';
 
 export default function Footermain() {
   return (
@@ -9,52 +10,52 @@ export default function Footermain() {
         <div className="footer-section" id="contact-us">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-4 col-sm-12">
+                    <div className="col-md-3 col-sm-12">
                         <Link href="/">
-                            <a className="footerlogo">
+                            <div className="footerlogo">
                                 <Image
                                     src={logoPicFooter}
                                     width={219}
                                     height={77}
                                     alt="Office Caller"
                                 />
-                            </a>
+                            </div>
                         </Link>
                     </div>
-                    <div className="col-md-4 col-sm-12">
+                    <div className="col-md-3 col-sm-12">
                         <h4>Quick Links</h4>
                         <ul>
                             <li>
                                 <Link href="#">
-                                    <a className="nav-link">
+                                <div  className="nav-link">
                                         Home
-                                    </a>
+                                    </div>
                                 </Link>
                             </li>
                             <li>
                                 <Link href="#about-section">
-                                    <a className="nav-link">
+                                <div  className="nav-link">
                                         About Us
-                                    </a>
+                                    </div>
                                 </Link>
                             </li>
                             <li>
                                 <Link href="#services-section">
-                                    <a className="nav-link">
+                                <div className="nav-link">
                                         Services
-                                    </a>
+                                    </div>
                                 </Link>
                             </li>
                             <li>
                                 <Link href="#contact-us">
-                                    <a className="nav-link">
+                                <div className="nav-link">
                                         Contact Us
-                                    </a>
+                                    </div>
                                 </Link>
                             </li>
                         </ul>
                     </div>
-                    <div className="col-md-4 col-sm-12">
+                    <div className="col-md-3 col-sm-12">
                         <h4>Contact Us</h4>
                         <div className="address-location">
                             <div>
@@ -70,6 +71,11 @@ export default function Footermain() {
                                 <div><p>Email: <a href="mailto:info@redbytes.in">info@redbytes.in</a></p></div>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="col-md-3 col-sm-12" >
+                    
+                    <ContactFormFooter/>
                     </div>
                 </div>
             </div>

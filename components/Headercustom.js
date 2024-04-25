@@ -8,14 +8,14 @@ export default function Headercustom() {
     <nav className="navbar navbar-expand-lg navbar-light custom-navbar">
         <div className="container">
             <Link href="/">
-                <a className="navbar-brand">
+                <div className="navbar-brand">
                     <Image
                         src={logoPic}
                         width={219}
                         height={77}
                         alt="Office Caller"
                     />
-                </a>
+                </div>
             </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -26,30 +26,30 @@ export default function Headercustom() {
                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li className='nav-item'>
                         <Link href="#">
-                            <a className="nav-link">
+                            <div className="nav-link">
                                 Home
-                            </a>
+                            </div>
                         </Link>
                     </li>
                     <li className='nav-item'>
                         <Link href="#about-section">
-                            <a className="nav-link">
+                            <div className="nav-link">
                                 About Us
-                            </a>
+                            </div>
                         </Link>
                     </li>
                     <li className='nav-item'>
                         <Link href="#services-section">
-                            <a className="nav-link">
+                            <div className="nav-link">
                                 Services
-                            </a>
+                            </div>
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link href="#contact-us">
-                            <a className="nav-link">
+                        <Link href="contactus">
+                            <div className="nav-link">
                                 Contact Us
-                            </a>
+                            </div>
                         </Link>
                     </li>
                 </ul>

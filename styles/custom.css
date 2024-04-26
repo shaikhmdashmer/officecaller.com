@@ -2007,10 +2007,10 @@ a svg {
   border-color: #78276A;
   border-radius: 25px 25px 25px 25px;
 }
-.edsys-btn:hover {
+/* .edsys-btn:hover {
   background-color: var(--e-global-color-accent);
   border-color: var(--e-global-color-accent);
-}
+} */
 
 .contact-form {
   padding-top: 130px;

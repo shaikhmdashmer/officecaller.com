@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
+import Footermain from "../components/Footermain";
 
 const thankyou = () => {
   return (
@@ -37,6 +38,7 @@ const thankyou = () => {
           </div>
         </div>
       </div>
+      <Footermain />
     </>
   );
 };

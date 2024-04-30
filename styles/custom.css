@@ -2213,6 +2213,7 @@ a svg {
   cursor: pointer;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  z-index: 999;
 }
 .whatsapp-img {
   color: #fff;

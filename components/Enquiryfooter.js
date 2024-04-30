@@ -123,19 +123,10 @@ export default function ContactFormFooter() {
                   />
                   <div className="invalid-feedback">Please enter phone no.</div>
                 </div>
+    
+                
 
-                <div className="form-groupcon">
-                <select
-                  className="form-control form_bgnd "
-                  onChange={(e) => setService(e.target.value)}
-                >
-                  <option>Subject</option>
-                  <option>NO Subject</option>
-                  <option>Subject</option>
-               
-                </select>
-                <RiArrowDropDownLine className="caret-icon" />
-              </div>
+
                 <div className="form-group my-2 has-validation">
                   <textarea
                     required
@@ -153,7 +144,7 @@ export default function ContactFormFooter() {
                 <div className="submitBtn">
                   <button
                     type="submit"
-                    className="btn btn-primary btn-rounded edsys-btn "
+                    className="btn btn-primary btn-lg btn-rounded btn-lgtleftright"
                   >
                     Submit <i className="fa fa-arrow-right"></i>
                   </button>

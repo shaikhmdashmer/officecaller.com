@@ -82,7 +82,7 @@ export default function Footermain() {
                   <div>
                     <p>
                       Email:{" "}
-                      <a href="mailto:info@redbytes.in">info@redbytes.in</a>
+                      info@redbytes.in
                     </p>
                   </div>
                 </div>
@@ -103,46 +103,46 @@ export default function Footermain() {
         </div>
       </div>
       <div className="what-set">
-        <a
+        <Link
           className="whatsapp-icon"
           href="https://api.whatsapp.com/send?phone=8113863000&text= Hi Office Caller Team,"
           target="_blank"
           rel="noopener noreferrer"
         >
           <i className="fab fa-whatsapp whatsapp-img"></i>
-        </a>
+        </Link>
       </div>
       <div className="responsivefooter-menu">
         <ul>
           <li>
-            <a href="tel:+918113863000">
+            <Link href="tel:+918113863000">
               <i className="fa fa-phone rotate-icon"></i>
               <span>Call</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#contact-us">
+            <Link href="/#contact-us">
               <i className="fa fa-envelope"></i>
               <span>Email</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="https://calendly.com/cloudxperte">
+            <Link href="https://calendly.com/cloudxperte">
               <i className="fas fa-desktop"></i>
               <span>Free Demo</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#about-section">
+            <Link href="/#about-section">
               <i className="fas fa-info-circle"></i>
               <span>About us</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
 
       {/* download-btn-fixed */}
-      {/* <a className="download-btn-fixed" href="#">Download Now <i className="fa fa-arrow-right"></i></a> */}
+      {/* <Link className="download-btn-fixed" href="#">Download Now <i className="fa fa-arrow-right"></i></Link> */}
 
       {/* cta-strip-bottomfixed */}
       <div className="cta-strip-bottomfixed">
@@ -150,14 +150,14 @@ export default function Footermain() {
           <div className="cta-row">
             {/* <div className="ctauser"></div> */}
             <h3>Connect with Us Easily</h3>
-            <a
+            <Link
               href="https://play.google.com/store/apps/details?id=com.app.officecaller"
               className="btn btn-light btn-lg"
               target="_blank"
               rel="noreferrer"
             >
               Download Now <i className="fa fa-download"></i>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

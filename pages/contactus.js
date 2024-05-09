@@ -1,13 +1,19 @@
-import React, { useEffect, useState } from 'react'
+
 import Head from 'next/head'
 import Image from 'next/image'
 import Headercustom from '../components/Headercustom'
 import Footermain from '../components/Footermain'
-import { useRouter } from 'next/router'
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { RiArrowDropDownLine } from "react-icons/ri";
-export default function aboutus() {
-  const QuryUrl = useRouter();
+
+
+
+
+export default function Contact() {
   const router = useRouter();
+  const QuryUrl = useRouter();
+  
   const UTM = router.query.utm_source;
   const liveUrl = QuryUrl.query.pageslug;
  
@@ -138,18 +144,7 @@ export default function aboutus() {
                   <div className="invalid-feedback">Please enter phone no.</div>
                 </div>
 
-                <div className="form-groupcon">
-            <select
-              className="form-control form_bgnd "
-              onChange={(e) => setService(e.target.value)}
-            >
-              <option>Subject</option>
-              <option>NO Subject</option>
-              <option>Subject</option>
-           
-            </select>
-            <RiArrowDropDownLine className="caret-icon" />
-          </div>
+              
 
                 <div className="form-group my-2 has-validation">
                   <textarea
@@ -170,7 +165,7 @@ export default function aboutus() {
                     type="submit"
                     className="btn btn-primary btn-rounded edsys-btn "
                   >
-                    Submit <i className="fa fa-arrow-right"></i>
+                    Submit 
                   </button>
                 </div>
                 <br />

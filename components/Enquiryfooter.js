@@ -48,6 +48,7 @@ export default function ContactFormFooter() {
           user_location: userLive ? userLive.city: "Na",
           page_location: liveUrl ? liveUrl : liveUrlinital,
           country_code: userLive ? userLive.location.calling_code : "Na",
+          country_name : userLive.country_name ,
           user_mobile: phoneField,
           user_message: message,
           inquiry_through: UTM ? UTM : "No UTM",

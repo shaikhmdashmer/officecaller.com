@@ -1996,6 +1996,13 @@ a svg {
   padding: 20px 0;
   background: #fff;
 }
+@media (max-width: 991px) {
+  .copyright-section {
+    text-align: center;
+    padding: 20px 0 70px 0;
+    background: #fff;
+  }
+}
 
 /*Responsive layout*/
 @media (max-width: 991px) {

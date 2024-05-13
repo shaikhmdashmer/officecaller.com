@@ -80,10 +80,7 @@ export default function Footermain() {
                     </span>
                   </div>
                   <div>
-                    <p>
-                      Email:{" "}
-                      info@redbytes.in
-                    </p>
+                    <p>Email: info@redbytes.in</p>
                   </div>
                 </div>
               </div>

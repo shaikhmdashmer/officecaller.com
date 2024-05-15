@@ -6,7 +6,7 @@ import Footermain from '../components/Footermain'
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { RiArrowDropDownLine } from "react-icons/ri";
-
+import PhoneInput from 'react-phone-input-2'
 
 
 
@@ -26,6 +26,7 @@ export default function Contact() {
   const [userMsg, setuserMsg] = useState("");
   const [userLive, setLiveLocation] = useState();
   const [Service, setService] = useState();
+  const [subject , setSubject] = useState();
   
   // const [recaptchaToken, setRecaptchaToken] = useState(null);
 
@@ -58,6 +59,7 @@ export default function Contact() {
         country_code: userLive ? userLive.location.calling_code : "Na",
         user_mobile: phoneField,
         user_message: message,
+        user_subject:  subject,
         inquiry_through: UTM ? UTM : "No UTM",
         website_source: "Office Caller",
         apikey: "7dac0fcac909b349",
@@ -130,18 +132,32 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="form-group my-2 has-validation">
+                <PhoneInput
+                     country={userLive ? userLive.country_code.toLowerCase() : ''}
+                    //  country={userLive ? userLive.location.country_code : 'IN'}
+                      enableSearch={true}
+                      type="text"
+                      id="phonefield"
+                      name="phonefield"
+                      aria-describedby="inputGroupPrepend"
+                      onChange={(e) => setPhoneField(e)}
+                      placeholder="Phone Number"
+                      required
+                    />
+                </div>
+
+                <div className="form-group my-2 has-validation">
                   <input
                     required
                     name="text"
-                    onChange={(e) => setPhoneField(e.target.value)}
-                    type="tel"
-                    inputMode="numeric"
-                    minLength="9"
-                    maxLength="13"
-                    className="form-control mediaWay mb-3"
-                    placeholder="Enter your Phone No."
+                    onChange={(e) => setSubject(e.target.value)}
+                    type="subject"
+                    className="form-control   mb-3"
+                    placeholder="Enter your Subject"
                   />
-                  <div className="invalid-feedback">Please enter phone no.</div>
+                  <div className="invalid-feedback">
+                    Please enter subject
+                  </div>
                 </div>
 
               

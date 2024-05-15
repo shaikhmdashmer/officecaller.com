@@ -2224,3 +2224,9 @@ a svg {
     display: flex;
   }
 }
+
+
+.react-tel-input .form-control {
+  width: 100% !important;
+  margin-bottom: 5px;
+}

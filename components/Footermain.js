@@ -4,8 +4,11 @@ import Image from "next/image";
 import logoPicFooter from "/images/logo-footer.svg";
 import ContactFormFooter from "./Enquiryfooter";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
+import { useRouter } from "next/router";
 
 export default function Footermain() {
+  const router = useRouter();
+  const path = router.asPath;
   return (
     <>
       <div className="footer-section" id="contact-us">
@@ -88,7 +91,7 @@ export default function Footermain() {
             </div>
 
             <div className="col-md-3 col-sm-12">
-              <ContactFormFooter />
+              {path == "/thank-you/" ? <></> : <ContactFormFooter />}
             </div>
           </div>
         </div>

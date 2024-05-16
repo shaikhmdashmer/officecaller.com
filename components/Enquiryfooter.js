@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import PhoneInput from 'react-phone-input-2'
+
 
 export default function ContactFormFooter() {
+<<<<<<< HEAD
   const QuryUrl = useRouter();
   const router = useRouter();
   const UTM = router.query.utm_source;
@@ -69,6 +72,79 @@ export default function ContactFormFooter() {
       }
     });
   };
+=======
+    const QuryUrl = useRouter();
+    const router = useRouter();
+    const UTM = router.query.utm_source;
+    const liveUrl = QuryUrl.query.pageslug;
+   
+    const liveUrlinital = QuryUrl.pathname;
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phoneField, setPhoneField] = useState("");
+    const [message, setMessage] = useState("");
+    const [getLoader, setLoader] = useState(false);
+    const [userMsg, setuserMsg] = useState("");
+    const [userLive, setLiveLocation] = useState();
+    const [Service, setService] = useState();
+    const [subject , setSubject] = useState();
+    
+    // const [recaptchaToken, setRecaptchaToken] = useState(null);
+  
+    useEffect(() => {
+      fetch("https://api.testreveal.com:3013/api/get-client-location")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("UserLocation", data);
+          setLiveLocation(data);
+        })
+        .catch((error) => console.log(error));
+    }, []);
+  
+    const handleSubmit3 = async (e) => {
+      e.preventDefault();
+      setLoader(true);
+  
+      console.log("Sending");
+      await fetch("https://phonebook.redbytes.in/api/create_email_inquiry/", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_name: name,
+          user_mail: email,
+          user_location: userLive ? userLive.city: "Na",
+          page_location: liveUrl ? liveUrl : liveUrlinital,
+          country_code: userLive ? userLive.location.calling_code : "Na",
+          country_name : userLive.country_name ,
+          user_mobile: phoneField,
+          user_subject:  subject,
+          user_message: message,
+          inquiry_through: UTM ? UTM : "No UTM",
+          website_source: "Office Caller",
+          apikey: "7dac0fcac909b349",
+          // recaptchaToken: recaptchaToken,
+          Service:Service
+        }),
+      }).then((res) => {
+        console.log("Response received");
+        if (res.status === 200) {
+          console.log("Response succeeded!");
+          setuserMsg(
+            ""
+          );
+          setLoader(false);
+           router.push("/thank-you"); // Replace "/next-page-url" with your actual next page URL
+        } else {
+          console.log("Something went wrong...please check");
+          setLoader(false);
+        }
+      });
+    };
+  
+>>>>>>> 0433a3d94139595de589a1e19f9493e62ba8fdd2
 
   return (
     <>
@@ -107,18 +183,33 @@ export default function ContactFormFooter() {
                   </div>
                 </div>
                 <div className="form-group my-2 has-validation">
+                <PhoneInput
+                     country={userLive ? userLive.country_code.toLowerCase() : ''}
+                    //  country={userLive ? userLive.location.country_code : 'IN'}
+                      enableSearch={true}
+                      type="text"
+                      id="phonefield"
+                      name="phonefield"
+                      aria-describedby="inputGroupPrepend"
+                      onChange={(e) => setPhoneField(e)}
+                      placeholder="Phone Number"
+                      required
+                    />
+                  
+                </div>
+
+                <div className="form-group my-2 has-validation">
                   <input
                     required
                     name="text"
-                    onChange={(e) => setPhoneField(e.target.value)}
-                    type="tel"
-                    inputMode="numeric"
-                    minLength="9"
-                    maxLength="13"
-                    className="form-control mediaWay mb-3"
-                    placeholder="Enter your Phone No."
+                    onChange={(e) => setSubject(e.target.value)}
+                    type="subject"
+                    className="form-control   mb-3"
+                    placeholder="Enter your Subject"
                   />
-                  <div className="invalid-feedback">Please enter phone no.</div>
+                  <div className="invalid-feedback">
+                    Please enter subject
+                  </div>
                 </div>
 
                 <div className="form-group my-2 has-validation">

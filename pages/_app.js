@@ -6,6 +6,7 @@ import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 import styles from '../styles/custom.css'
 import '../scripts/custom-scripts.js'
+import 'react-phone-input-2/lib/style.css'
 
 function MyApp({ Component, pageProps }) {
   return (

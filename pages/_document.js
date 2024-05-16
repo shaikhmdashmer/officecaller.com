@@ -4,9 +4,11 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-      
-<meta name="google-site-verification" content="hO4YBJ-yt4xuQ1OUXHIyOL31ICyTclixq2NKcmttXHw" />
-      <script
+        <meta
+          name="google-site-verification"
+          content="hO4YBJ-yt4xuQ1OUXHIyOL31ICyTclixq2NKcmttXHw"
+        />
+        <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -17,8 +19,8 @@ export default function Document() {
         />
       </Head>
       <body>
-          <Main />
-          <NextScript />
+        <Main />
+        <NextScript />
         <noscript
           dangerouslySetInnerHTML={{
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M98HDQS" height="0" width="0" style="display: none; visibility: hidden;" />`,

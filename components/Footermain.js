@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logoPicFooter from "/images/logo-footer.svg";
 import ContactFormFooter from "./Enquiryfooter";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 export default function Footermain() {
   return (
@@ -99,7 +100,18 @@ export default function Footermain() {
           </span>
         </div>
       </div>
-      <div className="what-set">
+
+      <div className="Floatwp">
+        <FloatingWhatsApp
+          phoneNumber="8113863000"
+          accountName="Office caller"
+          avatar="/images/floatwpp.svg"
+          statusMessage="Active"
+          chatMessage={`Hi Office Caller Team,`}
+        />
+      </div>
+
+      {/* <div className="what-set">
         <Link
           className="whatsapp-icon"
           href="https://api.whatsapp.com/send?phone=8113863000&text= Hi Office Caller Team,"
@@ -108,7 +120,7 @@ export default function Footermain() {
         >
           <i className="fab fa-whatsapp whatsapp-img"></i>
         </Link>
-      </div>
+      </div> */}
       <div className="responsivefooter-menu">
         <ul>
           <li>
@@ -165,4 +177,14 @@ export default function Footermain() {
       </a>
     </>
   );
+}
+{
+  /* WhatsApp chat iframe */
+}
+{
+  /* <iframe
+                title="WhatsApp Chat"
+                src="https://web.whatsapp.com/"
+                className="whatsapp-chat"
+              ></iframe> */
 }

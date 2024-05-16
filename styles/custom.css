@@ -2202,7 +2202,7 @@ a svg {
   }
 }
 /* --------whatsapp fixed--------- */
-.what-set {
+/* .what-set {
   display: none;
 }
 .whatsapp-icon {
@@ -2229,6 +2229,16 @@ a svg {
 }
 @media (max-width: 767px) {
   .what-set {
+    display: flex;
+  }
+} */
+
+/* ----- */
+.Floatwp {
+  display: none;
+}
+@media (max-width: 768px) {
+  .Floatwp {
     display: flex;
   }
 }

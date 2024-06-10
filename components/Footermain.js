@@ -140,9 +140,7 @@ export default function Footermain() {
         </ul>
       </div>
 
-      {/* download-btn-fixed */}
-      {/* <Link className="download-btn-fixed" href="#">Download Now <i className="fa fa-arrow-right"></i></Link> */}
-
+      
       {/* cta-strip-bottomfixed */}
       <div className="cta-strip-bottomfixed">
         <div className="container">

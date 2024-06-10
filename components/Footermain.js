@@ -9,6 +9,14 @@ import { useRouter } from "next/router";
 export default function Footermain() {
   const router = useRouter();
   const path = router.asPath;
+
+
+  const [isOpen, setIsOpen] = useState(false);
+    // Function to toggle chat box visibility
+    const toggleChatBox = () => {
+      setIsOpen(!isOpen);
+    };
+  
   return (
     <>
       <div className="footer-section" id="contact-us">
@@ -103,27 +111,6 @@ export default function Footermain() {
           </span>
         </div>
       </div>
-
-      <div className="Floatwp">
-        <FloatingWhatsApp
-          phoneNumber="8113863000"
-          accountName="Office caller"
-          avatar="/images/floatwpp.svg"
-          statusMessage="Active"
-          chatMessage={`Hi Office Caller Team,`}
-        />
-      </div>
-
-      {/* <div className="what-set">
-        <Link
-          className="whatsapp-icon"
-          href="https://api.whatsapp.com/send?phone=8113863000&text= Hi Office Caller Team,"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-whatsapp whatsapp-img"></i>
-        </Link>
-      </div> */}
       <div className="responsivefooter-menu">
         <ul>
           <li>
@@ -174,20 +161,68 @@ export default function Footermain() {
         </div>
       </div>
 
+
+      <div id="whatsapp-chat-widget" className="whatsapp-chat-widget">
+        <div id="wa-widget-send-button" onClick={toggleChatBox}>
+          <i className="fab fa-whatsapp wa-messenger-svg-whatsapp wh-svg-icon"></i>
+        </div>
+        {isOpen && (
+          <div id="wa-chat-box" className="wa-chat-box show">
+            <div className="wa-chat-box-header">
+              <img
+                className="wa-chat-box-brand bg-light"
+                src="/images/office-caller.png"
+              />
+              <div className="wa-chat-box-brand-text">
+                <div className="wa-chat-box-brand-name">Office Caller</div>
+                {/* <div className="wa-chat-box-brand-subtitle">
+                  appify your Business
+                </div> */}
+              </div>
+              <div className="wa-chat-bubble-close-btn" onClick={toggleChatBox}>
+                <i
+                  className="fas fa-times closeicon"
+                  style={{ display: "table-row", cursor: "pointer" }}
+                ></i>
+              </div>
+            </div>
+
+            <div className="wa-chat-box-content">
+              <div className="wa-chat-box-content-chat">
+                <div className="wa-chat-box-content-chat-brand">
+                  Office Caller
+                </div>
+                <div className="wa-chat-box-content-chat-welcome">
+                  Hi there!
+                  <br />
+                  How can I help you today?
+                </div>
+              </div>
+            </div>
+
+            <div className="wa-chat-box-send">
+              <a
+                role="button"
+                target="_blank"
+                href="https://api.whatsapp.com/send?phone=8113863000&amp;text=Hi, Office Caller Team"
+                title="WhatsApp"
+                className="wa-chat-box-content-send-btn"
+              >
+                <i className="fab fa-whatsapp wa-chat-box-content-send-btn-icon"></i>
+                <span className="wa-chat-box-content-send-btn-text">
+                  Start Chat
+                </span>
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
+
+
       {/* scroll-top-btn */}
       <a className="scroll-top-btn" href="#">
         <i className="fa fa-arrow-up"></i>
       </a>
     </>
   );
-}
-{
-  /* WhatsApp chat iframe */
-}
-{
-  /* <iframe
-                title="WhatsApp Chat"
-                src="https://web.whatsapp.com/"
-                className="whatsapp-chat"
-              ></iframe> */
 }

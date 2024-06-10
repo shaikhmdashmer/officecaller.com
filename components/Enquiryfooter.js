@@ -20,23 +20,21 @@ export default function ContactFormFooter() {
   const [Service, setService] = useState();
   const [subject, setSubject] = useState();
 
-  // const [recaptchaToken, setRecaptchaToken] = useState(null);
-
-  useEffect(() => {
-    fetch("https://api.testreveal.com:3013/api/get-client-location")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("UserLocation", data);
-        setLiveLocation(data);
-      })
-      .catch((error) => console.log(error));
-  }, []);
 
   const handleSubmit3 = async (e) => {
+ 
     e.preventDefault();
     setLoader(true);
 
-    console.log("Sending");
+    setuserMsg("Loading........")
+    const ipResponse = await fetch('https://api.ipify.org?format=json');
+    const ipData = await ipResponse.json();
+  
+    // Fetch location data from your API route
+    const response = await fetch(`https://api.ipstack.com/${ipData.ip}?access_key=82ef51789ae7b253f10d71b6885bade5`);
+    let userApi = await response.json();
+
+  
     await fetch("https://phonebook.redbytes.in/api/create_email_inquiry/", {
       method: "POST",
       headers: {
@@ -46,10 +44,10 @@ export default function ContactFormFooter() {
       body: JSON.stringify({
         user_name: name,
         user_mail: email,
-        user_location: userLive ? userLive.city : "Na",
+        user_location: userApi ? userApi?.city : "Na",
         page_location: liveUrl ? liveUrl : liveUrlinital,
-        country_code: userLive ? userLive.location.calling_code : "Na",
-        country_name: userLive.country_name,
+        country_code: userApi ? userApi?.location?.calling_code : "Na",
+        country_name: userApi ? userApi?.country_name : 'NA',
         user_mobile: phoneField,
         user_subject: subject,
         user_message: message,
@@ -76,11 +74,7 @@ export default function ContactFormFooter() {
   return (
     <>
       <div className="">
-        <form
-          onSubmit={(e) => {
-            handleSubmit3(e);
-          }}
-        >
+        <form onSubmit={(e) => { handleSubmit3(e)}}>
           <div className="container">
             <h4 className="text-center">QUICK CONTACT</h4>
             <div className="row">
@@ -111,10 +105,7 @@ export default function ContactFormFooter() {
                 </div>
                 <div className="form-group my-2 has-validation">
                   <PhoneInput
-                    country={
-                      userLive ? userLive.country_code.toLowerCase() : ""
-                    }
-                    //  country={userLive ? userLive.location.country_code : 'IN'}
+                    country={"in"}
                     enableSearch={true}
                     type="text"
                     id="phonefield"

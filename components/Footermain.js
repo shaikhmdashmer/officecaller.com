@@ -203,6 +203,7 @@ export default function Footermain() {
             <div className="wa-chat-box-send">
               <a
                 role="button"
+                rel="noreferrer"
                 target="_blank"
                 href="https://api.whatsapp.com/send?phone=8113863000&amp;text=Hi, Office Caller Team"
                 title="WhatsApp"

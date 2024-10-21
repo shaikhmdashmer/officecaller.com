@@ -1,0 +1,49 @@
+
+.chat-container {
+    position: relative;
+    /* Add any other styles you need for your chat container */
+  }
+  
+  .button-container {
+    position: fixed;
+    bottom: 50px; /* Adjust as needed */
+    right: 50px; /* Adjust as needed */
+  }
+  
+  
+  .chat-container {
+    position: relative;
+    /* Add any other styles you need for your chat container */
+  }
+  
+  .button-container {
+    position: fixed;
+  }
+  
+  .fixed-button {
+    /* Add styles for your button */
+    transition: transform 0.3s ease; /* Add transition for smooth rotation */
+    width: 40px;
+    height: 40px;
+    background-color: aqua;
+    border-radius: 50%;
+    font-weight: bolder;
+    font-size: 30px;
+    border: 2px solid aqua;
+    cursor: pointer;
+  }
+  
+  
+  .rotate {
+    transform: rotate(50deg); /* Rotate the button by 45 degrees */
+  }
+  .btn-round{
+    background-color: #54C6D5;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: 59px;
+    margin-left: 18px;
+  }

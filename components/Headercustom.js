@@ -26,20 +26,27 @@ export default function Headercustom() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link href="#">
+              <Link href="/">
                 <div className="nav-link">Home</div>
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="#about-section">
+              <Link href="/#about-section">
                 <div className="nav-link">About Us</div>
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="#services-section">
+              <Link href="/#services-section">
                 <div className="nav-link">Services</div>
               </Link>
             </li>
+            
+            <li className="nav-item">
+              <Link href="/office-caller-software-feature">
+                <div className="nav-link">Feature List</div>
+              </Link>
+            </li>
+
             <li className="nav-item">
               <Link href="contactus">
                 <div className="nav-link">Contact Us</div>

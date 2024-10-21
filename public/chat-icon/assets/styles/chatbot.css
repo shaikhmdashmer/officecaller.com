@@ -1,0 +1,1734 @@
+.dialog {
+  width: 460px;
+  position: relative;
+  height: 90%;
+  margin-right: 30px;
+  margin-bottom: 50px;
+}
+
+.head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(85, 199, 214);
+  height: 130px;
+  border-radius: 5px solid #55C7D6
+}
+
+.titleBar {
+  background-color: white;
+  margin-top: 5px;
+  padding-left: 20px;
+  margin-left: 30px;
+  margin-right: 25px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  /* box-shadow: 0px 0px 0.5px 0.5px #b3b3b3; */
+  overflow: visible;
+  position: fixed;
+  z-index: 9999;
+}
+
+/* .serviceCard {
+  background-color: #CCEEF3;
+  margin: 0px 0px 0px 5px;
+  border-radius: 5px;
+  height: 90px;
+  width: 90px;
+  cursor: pointer;
+  padding: 10px 20px;
+} */
+
+.plansCard-container {
+  display: flex;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.plansCard-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+.scroll-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  cursor: grab;
+  scrollbar-width: none;
+}
+
+.scroll-container.active {
+  cursor: grabbing;
+}
+
+.plansCardBox {
+  display: inline-flex;
+  align-items: center;
+}
+
+
+
+
+.plansCardBox {
+  display: flex;
+}
+
+.serviceCard {
+  background-color: #CCEEF3;
+  /* margin: 8px 8px 0px 6px; */
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
+
+  flex: 0 0 auto;
+  margin-right: 20px;
+  /* padding: 10px 20px; */
+  cursor: pointer;
+}
+
+.plansCard {
+  background-color: #CCEEF3;
+  /* margin: 8px 5px 0px 5px; */
+  border-radius: 5px;
+  height: 90px;
+  width: 90px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
+
+  flex: 0 0 auto;
+  margin-right: 15px;
+  /* padding: 10px 20px; */
+  cursor: pointer;
+}
+
+.planCardIcons {
+  width: 20px;
+}
+
+.plansCard img {
+  width: 20px;
+}
+
+.serviceTitle {
+  color: #02ABC5;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+/* .container {
+    overflow: hidden;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+} */
+.active_plan {
+  background-color: #02ABC5;
+}
+
+.message {
+  background-color: #02ABC5;
+  color: white;
+  padding: 8px 8px 8px 8px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  font-weight: bold;
+}
+
+.service-container {
+  /* overflow: hidden; */
+  /* width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap; */
+}
+
+.service-container::-webkit-scrollbar {
+  display: none;
+}
+
+.service-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.card_des {
+  background-color: #02ABC5;
+  height: 100%;
+  /* width: 320px; */
+  border-radius: 20px;
+  border: 1px solid #55C7D6;
+  ;
+  /* box-shadow: 0px 0px 5px 5px lightgrey; */
+  /* border: 1px solid #888888;
+    box-shadow: 0px 0px #888888; */
+
+}
+
+.card_des_bottom {
+  background-color: white;
+  padding: 5px;
+  border: 1px solid rgb(0, 170, 197);
+  border-radius: 0px 0px 20px 20px;
+  /* margin-left:-16px; */
+  /*margin-bottom:-32px;*/
+  /* margin-right:-20px;
+    margin-top: -25px;
+    padding:10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px; */
+  /* margin-top: -9px;
+    margin-bottom: 23px; */
+}
+
+.blur-background {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.input-container {
+  position: relative;
+  border-radius: 20px;
+  box-shadow: #02ABC5;
+}
+
+.input-container input {
+  padding-right: 40px;
+}
+
+.icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.user-icon {
+  margin-right: 50px;
+}
+
+.msgBox {
+  margin-top: 100px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 74%;
+  padding-bottom: 50px;
+}
+
+.ui-accordion-header-text {
+  text-decoration: none !important;
+}
+
+.plansListBox {
+  height: 100%;
+  padding-left: 15px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.accordionTitle {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+.p-accordion-header-link {
+  text-decoration: none;
+}
+
+.p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon {
+  display: none;
+}
+
+.small_font_size {
+  font-size: 12px;
+}
+
+
+
+.acc_card {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 13px;
+}
+
+.input_placeholder {
+  border: none;
+  width: 100%;
+  padding-left: 30px;
+  font-size: 13px;
+  height: 50px;
+  font-weight: 600;
+  background: #f1f1f1;
+}
+
+.p-inputtext:focus {
+  box-shadow: 0 0 10px rgb(0, 170, 197);
+}
+
+.otp_input {
+  width: 50px;
+  height: 46px;
+  margin-left: 10px;
+  color: rgb(0, 170, 197);
+  font-weight: bold;
+  border: 1px solid #CCEEF3;
+  background-color: #CCEEF3;
+}
+
+.border_feedback1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  height: 92px;
+  background-color: #C2EBF140;
+  padding: 50px 9px;
+  ;
+}
+
+.border_feedback2 {
+  border-radius: 10px;
+  background-color: #C2EBF140;
+  padding: 17px 10px;
+}
+
+.screen {
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 100%;
+  ;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.screen2 {
+  height: 100%;
+  ;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.backImage_container {
+  margin-left: 50px;
+  position: absolute;
+  right: 0;
+}
+
+.back_image {
+  height: 240px;
+  margin-top: -120px;
+  margin-right: 0;
+  margin-left: -50px;
+}
+
+.back_image_2 {
+  height: 175px;
+  margin-right: 0;
+  /* margin-top: -10px; */
+  margin-left: -50px;
+}
+
+.highspeed-box {
+  background-color: #CCEEF3;
+  margin-top: 20px;
+}
+
+.p-accordion-content {
+  margin-top: -8px;
+  background-color: #CCEEF3;
+  border: 2px solid #CCEEF3;
+}
+
+.card_link_color {
+  color: #02ABC5;
+}
+
+.AccordionTab {
+  margin-top: 0;
+  /* Remove top margin */
+}
+
+.p-rating .p-rating-item .p-rating-icon.p-icon {
+  width: 3.143rem;
+  height: 1.143rem;
+}
+
+.p-dialog .p-dialog-header-icons {
+  display: none;
+}
+
+.by-touch {
+  position: absolute;
+  bottom: 0;
+  background-color: rgb(85, 199, 214);
+  ;
+  left: 0;
+  right: 0;
+  height: 40px;
+}
+
+.p-rating .p-rating-item .p-rating-icon.p-icon {
+  color: #CCEEF3;
+  height: 30px;
+  padding-bottom: 6px;
+}
+
+.mobile {}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+
+.p-dialog .p-dialog-footer {
+  /* border: 6px solid white; */
+}
+
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-from-right {
+  animation: slideInRight 0.5s ease-out;
+}
+
+.p-dialog .p-dialog-header {
+  border-bottom: 2px solid transparent;
+}
+
+.p-button .p-button-label {
+  font-size: 15px;
+}
+
+.card_des .card-logo-img {
+  margin-left: 41px;
+  margin-bottom: -43px;
+  overflow: hidden;
+}
+
+.permonth {
+  font-size: 14px;
+}
+
+.pricePermonth_padding {
+  padding-top: 10px;
+  padding-left: 12px;
+}
+
+.highspeed-box {
+  margin-bottom: 25px;
+}
+
+@media screen and (min-width : 601px) {
+  .head {
+    .icons-collections {
+      padding: 22px 37px 4px;
+    }
+
+    .touch-close {
+      margin-left: -9px;
+    }
+
+    .titleBar {
+      width: 410px;
+      font-size: 16px;
+    }
+  }
+
+  .plansCard {
+    width: 87px;
+    height: 87px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 22px;
+      /* height: 20px; */
+    }
+  }
+
+  .serviceCard {
+    width: 90px;
+    height: 90px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 22px;
+      /* height: 20px; */
+    }
+  }
+
+  .small_font_size {
+    font-size: 12px;
+  }
+
+  .send-otp {
+    margin-top: 90px;
+  }
+
+  .otp-verification {
+    margin-top: 240px;
+    font-size: 14px;
+  }
+
+  .feedback-screen {
+    margin-top: 190px;
+
+    h6 {
+      font-size: 14px;
+    }
+
+    .img-icons {
+      width: 30px;
+      height: 30px;
+    }
+
+    .btn-icons {
+      width: 30px;
+      height: 30px;
+    }
+
+    .text-area {
+      height: auto;
+      font-size: 14px;
+    }
+
+    .thanks-feedback {
+      font-size: 15px;
+    }
+
+    .feed-btn {
+      font-size: 16px;
+      padding: 6px;
+    }
+  }
+
+  .success-screen {
+    margin-top: 250px;
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #55C7D6;
+    height: 120px;
+    border-radius: 5px solid #55C7D6;
+
+    .icons-collections {
+      padding: 10px 35px 0px;
+    }
+
+    .touch-icon {
+      width: auto;
+      height: auto;
+      padding-bottom: 10px;
+    }
+
+    .touch-close {
+      width: 32px;
+      height: 32px;
+    }
+
+    .one_promise-col {
+      margin-top: 10px;
+      margin-left: -15px;
+    }
+
+    .onepromise {
+      font-size: 12px;
+    }
+
+    .titleBar {
+      width: 400px;
+      font-size: 14px;
+    }
+  }
+
+  .mobile {
+    margin-top: 60px;
+  }
+
+  .plansCard {
+    width: 80px;
+    height: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .serviceCard {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .small_font_size {
+    font-size: 10px;
+  }
+
+  .card_des {
+    .card-text {
+      font-size: 15px;
+    }
+
+    .btn-round {
+      width: 35px;
+      height: 35px;
+    }
+
+    .card-logo-img {
+      width: 200px;
+      height: 160px;
+    }
+  }
+
+  /* .slick-slider{
+    height: 150px;
+  }
+ .card_des{
+  height: 150px;
+ }
+ .slick-list{
+  height: 150px;
+ } */
+  .slider-container {
+    margin-bottom: 30px;
+  }
+
+  .feedback-screen {
+    margin-top: 120px;
+  }
+
+  .highspeed-box {
+    height: 300px;
+    margin-bottom: 50px;
+
+    .high-speed {
+      font-size: 13px;
+    }
+
+    .high-speed-close {
+      width: 30px;
+      height: 30px;
+    }
+
+    .hs-text {
+      font-size: 13px;
+    }
+
+    .button,
+    buttonActivate,
+    .buttonDeActivate {
+      font-size: 12px;
+      width: 165px;
+    }
+  }
+
+  .card_des_bottom {
+    margin-top: 15px;
+
+    h6 {
+      font-size: 15px;
+    }
+  }
+
+  .input-container {
+    .user-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .lock-icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .input_placeholder {
+    width: 100%;
+    padding-left: 30px;
+    font-size: 12px;
+    height: 40px;
+    font-weight: 600;
+    background: #f1f1f1;
+  }
+
+  .p-inputtext::placeholder {
+    font-size: 10px;
+  }
+
+  .p-inputtext:focus {
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgb(0, 170, 197);
+  }
+
+  .send-otp {
+    margin-top: 70px;
+  }
+
+  .otp-verification {
+    margin-top: 190px;
+    font-size: 14px;
+  }
+
+  .border_feedback1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    height: 60px;
+    background-color: #C2EBF140;
+    padding: 2px 29px;
+  }
+
+  .back_image_2 {
+    height: 160px;
+  }
+
+  .feedback-screen {
+    margin-top: 155px;
+
+    h6 {
+      font-size: 10px;
+    }
+
+    .img-icons {
+      width: 20px;
+      height: 20px;
+    }
+
+    .btn-icons {
+      width: 22px;
+      height: 22px;
+    }
+
+    .text-area {
+      height: 70px;
+    }
+
+    .thanks-feedback {
+      font-size: 12px;
+    }
+
+    .feed-btn {
+      font-size: 14px;
+      padding: 6px 0px;
+    }
+  }
+
+  .success-screen {
+    margin-top: 200px;
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .p-dialog {
+    max-height: 100%;
+    height: 100%;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    padding: 0;
+    margin-left: 0;
+  }
+
+  .head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #55C7D6;
+    height: 120px;
+    border-radius: 5px solid #55C7D6;
+
+    .icons-collections {
+      padding: 15px 35px 0px;
+    }
+
+    .touch-icon {
+      width: auto;
+      height: auto;
+      padding-bottom: 10px;
+    }
+
+    .touch-close {
+      width: 32px;
+      height: 32px;
+    }
+
+    .one_promise-col {
+      margin-top: 9px;
+      margin-left: -15px;
+    }
+
+    .onepromise {
+      font-size: 12px;
+    }
+
+    .titleBar {
+      width: 80%;
+      font-size: 12px;
+    }
+  }
+
+  .titleBar {
+    font-size: 9px;
+  }
+
+  .mobile {
+    margin-top: 40px;
+  }
+
+  .plansCard {
+    width: 80px;
+    height: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .serviceCard {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .small_font_size {
+    font-size: 10px;
+  }
+
+  .card_des {
+    .card-text {
+      font-size: 15px;
+    }
+
+    .btn-round {
+      width: 35px;
+      height: 35px;
+    }
+
+    .card-logo-img {
+      width: 200px;
+      height: 160px;
+    }
+  }
+
+  .slider-container {
+    margin-bottom: 30px;
+  }
+
+  .feedback-screen {
+    margin-top: 120px;
+  }
+
+  .highspeed-box {
+    height: 350px;
+    margin-bottom: 50px;
+
+    .high-speed {
+      font-size: 13px;
+    }
+
+    .high-speed-close {
+      width: 30px;
+      height: 30px;
+    }
+
+    .hs-text {
+      font-size: 13px;
+    }
+
+    .button,
+    .buttonDeActivate {
+      font-size: 12px;
+      width: 147px;
+
+    }
+  }
+
+  .feedback-screen {
+    margin-top: 150px;
+
+    h6 {
+      font-size: 10px;
+    }
+
+    .img-icons {
+      width: 22px;
+      height: 22px;
+    }
+
+    .btn-icons {
+      width: 22px;
+      height: 22px;
+    }
+
+    .text-area {
+      height: 70px;
+      font-size: 10px;
+    }
+
+    .thanks-feedback {
+      font-size: 12px;
+    }
+
+    .feed-btn {
+      font-size: 14px;
+      padding: 6px 0px;
+    }
+  }
+
+  .border_feedback1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    height: 70px;
+    background-color: #C2EBF140;
+    padding: 30px 29px;
+  }
+}
+
+.make-bold {
+  font-weight: 700;
+}
+
+.slick-slider {
+  border: 1px solid #55C7D6;
+  border-radius: 20px;
+  padding: 0px 0px 10px;
+}
+
+@media screen and (max-width: 375px) {
+  .head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #55C7D6;
+    height: 110px;
+    border-radius: 5px solid #55C7D6;
+
+    .icons-collections {
+      padding: 15px 35px 0px;
+    }
+
+    .touch-icon {
+      width: auto;
+      height: auto;
+      padding-bottom: 10px;
+    }
+
+    .touch-close {
+      width: 28px;
+      height: 28px;
+    }
+
+    .one_promise-col {
+      margin-top: 9px;
+      margin-left: -19px;
+    }
+
+    .onepromise {
+      font-size: 9px;
+    }
+
+    .titleBar {
+      width: 75%;
+      font-size: 10px;
+    }
+  }
+
+  .titleBar {
+    font-size: 9px;
+  }
+
+  .mobile {
+    margin-top: 40px;
+  }
+
+  .plansCard {
+    width: 55px;
+    height: 58px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+
+  .serviceCard {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .small_font_size {
+    font-size: 8px;
+  }
+
+  .card_des {
+    .card-text {
+      font-size: 11px;
+    }
+
+    .btn-round {
+      width: 30px;
+      height: 30px;
+    }
+
+    .card-logo-img {
+      width: 180px;
+      height: 140px;
+    }
+  }
+
+  .slider-container {
+    margin-bottom: 30px;
+  }
+
+  .card_des_bottom {
+    margin-top: 36px;
+
+    h6 {
+      font-size: 11px;
+    }
+  }
+
+  .highspeed-box {
+    height: 300px;
+    margin-bottom: 30px;
+
+    .high-speed {
+      font-size: 11px;
+    }
+
+    .high-speed-close {
+      width: 25px;
+      height: 25px;
+    }
+
+    .hs-text {
+      font-size: 11px;
+    }
+
+    .button,
+    .buttonDeActivate {
+      font-size: 9px;
+      width: 100px;
+    }
+  }
+
+  .back_image_2 {
+    height: 140px;
+  }
+
+  .border_feedback1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    height: 60px;
+    background-color: #C2EBF140;
+    padding: 2px 29px;
+  }
+
+  .feedback-screen {
+    margin-top: 155px;
+
+    h6 {
+      font-size: 9px;
+    }
+
+    .img-icons {
+      width: 18px;
+      height: 18px;
+    }
+
+    .btn-icons {
+      width: 20px;
+      height: 20px;
+    }
+
+    .text-area {
+      height: 55px;
+      font-size: 9px;
+    }
+
+    .thanks-feedback {
+      font-size: 10px;
+    }
+
+    .feed-btn {
+      font-size: 12px;
+      padding: 6px 0px;
+    }
+  }
+
+  .p-button .p-button-label {
+    font-size: 12px;
+    padding: 0px 0px;
+  }
+}
+
+
+
+
+
+/* PlanSuccess.css */
+.plan-success {
+  margin-top: 30px;
+  position: relative;
+}
+
+.swipe {
+  position: absolute;
+  transform-origin: left center;
+  transition: transform 0.7s ease-in-out, opacity 0.3s ease-in-out, scale 0.5s ease-in-out;
+  /* Transform origin set to left center */
+}
+
+
+
+.hide {
+  transform: translateX(90%);
+  /* Move to the right */
+  opacity: 30;
+  /* display: none; */
+  /* Fade out */
+}
+
+.show {
+  display: block;
+  /* transform: translateX(0); */
+}
+
+/* 
+.swipe:nth-child(1) {
+  z-index: 7;
+  left: 90px;
+}
+
+.swipe:nth-child(2) {
+  z-index: 6;
+  left: 75px;
+}
+
+.swipe:nth-child(3) {
+  z-index: 5;
+  left: 60px;
+}
+
+.swipe:nth-child(4) {
+  z-index: 4;
+  left: 45px;
+}
+
+.swipe:nth-child(5) {
+  z-index: 3;
+  left: 30px;
+}
+
+.swipe:nth-child(6) {
+  z-index: 2;
+  left: 15px;
+}
+.swipe:nth-child(7) {
+  z-index: 1;
+  left: 0px;
+} */
+
+
+.service-table thead th {
+  background-color: #02ABC5;
+  color: white;
+  font-size: 14px;
+}
+
+.service-table tr td {
+  text-align: center;
+}
+
+/* .card_des {
+  width: 300px;
+  max-width: 85vw;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  box-shadow: 0px 18px 53px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial;
+} */
+
+/* .card_des_bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+} */
+
+/* .button {
+  background-color: #02ABC5;
+  color: white;
+  border: none;
+} */
+
+.buttonDeActivate {
+  color: #02ABC5;
+  border: 1px solid #02ABC5;
+}
+
+.hs-text {
+  font-size: 14px;
+}
+
+
+/* @media screen and (max-width: 325px) {
+  .head{
+    height: 200px;
+    .touch-icon{
+      width: 30px;
+      height: 30px;
+    }
+    .touch-close{
+      width: 20px;
+      height: 20px;
+    }
+    .onepromise{
+      font-size: 5px;
+    }
+    .online-icon{
+      width: 5px;
+      height: 5px;
+    }
+  }
+
+} */
+
+.paddingLeft-20px {
+  padding-left: 20px;
+}
+
+.paddingRigth-20px {
+  padding-right: 20px;
+}
+
+
+.service_balance_Card {
+  max-width: 306px;
+  width: 100%;
+  min-height: 93.44px;
+  height: fit-content;
+  top: 396px;
+  left: 20px;
+  padding: 13px 12px 13px 12px;
+  gap: 8px;
+  border-radius: 0 18px 18px 18px;
+  background-color: #F1F1F1;
+
+}
+
+.service_balance_card_paragraph {
+  font-family: Nunito;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16.37px;
+  text-align: left;
+  color: #4D4D4D;
+
+}
+
+.service_balance_Card_button {
+
+  max-width: 208.87px;
+  width: 100%;
+  min-height: 27.44px;
+  height: fit-content;
+  border-radius: 5px;
+  font-family: Nunito;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 13.64px;
+  text-align: center;
+  background-color: #02ABC5;
+  outline: none;
+  border: none;
+
+  color: #FFFFFF;
+
+}
+
+
+.myBalace_screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.myBalance_screen_container {
+  /* max-width: 359.75px; */
+  width: 100%;
+  height: 167.03px;
+  padding: 13px 25px 13px 25px;
+  gap: 5px;
+  border-radius: 18px;
+  border: 1px solid #02ABC5;
+  background-color: #CCEEF3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.myBalance_screen_heading {
+  font-family: Nunito;
+  font-size: 16px;
+  font-weight: 800;
+  /* line-height: 21.82px; */
+  text-align: left;
+  color: #02ABC5;
+  width: fit-content;
+  margin: 0;
+}
+
+.myBalance_screen_container p {
+  margin: 0;
+}
+
+.myBalance_screen_p1 {
+  font-family: Nunito;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19.1px;
+  text-align: left;
+  width: fit-content;
+  color: #02ABC5;
+
+}
+
+.myBalance_screen_p2 {
+  font-family: Nunito;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.1px;
+  text-align: left;
+  color: #02ABC5;
+  width: fit-content;
+
+  span {
+    font-family: Nunito;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19.1px;
+    text-align: left;
+
+  }
+}
+
+.myBalance_screen_p3 {
+  font-family: Nunito;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 16.37px;
+  text-align: left;
+  width: fit-content;
+  color: #02ABC5;
+}
+
+.myBalance_screen_p4 {
+  font-family: Nunito;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16.37px;
+  text-align: left;
+  width: fit-content;
+  color: #02ABC5;
+}
+
+.myBalance_button {
+  max-width: 247px;
+  width: 100%;
+  height: 39px;
+  padding: 10px 71px 10px 71px;
+  border-radius: 8px;
+  border: 0.5px 0px 0px 0px;
+  font-family: Nunito;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19.1px;
+  text-align: center;
+  color: #FFFFFF;
+  background: #02ABC5;
+  border: 0.5px solid #02ABC5
+}
+
+.myBalance_screen_container2 {
+  max-width: 282.29px;
+  width: 100%;
+  min-height: 135.02px;
+  border-radius: 0px 18px 18px 18px;
+  background: #F1F1F1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+}
+
+.myBalance_screen_container2 p {
+  margin: 2px;
+}
+
+.lostSimBox {
+  background: #F1F1F1;
+  border-radius: 18px 18px 18px 0px;
+  border: none;
+
+
+}
+
+.lostSim_singleSimCost_banner {
+  margin-top: 12px;
+  width: 156px;
+  padding: 13px 12px 8px 12px;
+  border-radius: 0px 18px 18px 18px;
+
+  background-color: #F1F1F1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.lostSim_singleSimCost_banner p {
+  font-family: Nunito;
+  font-size: 12px;
+  font-weight: 500;
+  /* line-height: 16.37px; */
+  text-align: left;
+  margin: 4px 0;
+
+}
+
+.lostSim_singleSimCost_banner p span {
+  font-family: Nunito;
+  font-size: 12px;
+  font-weight: 700;
+  /* line-height: 16.37px; */
+  text-align: left;
+  margin: 0;
+}
+
+.lostSim_singleSimCost_banner button {
+  font-family: Nunito;
+  font-size: 9.68px;
+  font-weight: 700;
+  line-height: 13.2px;
+  text-align: center;
+  width: 108.46px;
+  height: 24.2px;
+  border-radius: 7.26px;
+  border: 0.4px;
+  color: #FFFFFF;
+  background-color: #55C7D6;
+
+}
+
+.lostSim_singleSimCost_banner a {
+  font-family: Nunito;
+  font-size: 9.68px;
+  font-weight: 700;
+  text-align: center;
+  text-justify: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 108.46px;
+  height: 24.2px;
+  border-radius: 7.26px;
+  border: 0.4px;
+  color: #FFFFFF;
+  background-color: #55C7D6;
+
+  span {
+    text-decoration: none;
+  }
+}
+
+.myBalance_screen2_container {
+  width: 359px;
+  /* height: 202px; */
+
+}
+
+.myScreen_container2_wrapper {
+  background: #EFFAFB;
+  width: 359px;
+  padding: 14px 12px 14px 12px;
+  border-radius: 8px;
+}
+
+.myScreen_container2_wrapper p {
+  font-family: Nunito;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.1px;
+  text-align: left;
+  color: #4D4D4D;
+  margin: 5px;
+
+}
+
+.myScreen_container2_wrapper input {
+  background: #FFFFFF;
+  max-width: 335px;
+  width: 100%;
+  min-width: 0;
+  height: 30px;
+  gap: 0px;
+  border-radius: 5px;
+  border: none;
+}
+
+.or_contaienr {
+  text-align: center;
+
+  margin: 10px;
+}
+
+.or_contaienr p {
+  width: 100%;
+  text-align: center;
+  text-justify: center;
+  margin: 0;
+  font-family: Nunito;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21.82px;
+  color: #D4D4D4;
+
+}
+
+.puk_screen {
+  width: 297px;
+  /* min-height: 93.44px; */
+  top: 297.05px;
+  left: 19.77px;
+  padding: 13px 12px 13px 12px;
+  border-radius: 0px 18px 18px 18px;
+  background: #F1F1F1;
+  display: flex;
+  justify-content: content;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.puk_screen p {
+  font-family: Nunito;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16.37px;
+  text-align: left;
+  margin: 0;
+
+  span {
+    font-family: Nunito;
+    font-size: 12px;
+    text-align: left;
+    color: #02ABC5;
+    cursor: pointer;
+
+  }
+}
+
+.pukScreen_go_button {
+  width: 208.87px;
+  height: 27.44px;
+  border-radius: 5px;
+  background-color: #02ABC5;
+}
+
+.pukCodeSuccessScreen {
+  width: 169.13px;
+  /* height: 82px; */
+  padding: 13px 12px 13px 12px;
+  border-radius: 0px 18px 18px 18px;
+  background: #f1f1f1;
+}
+
+.pukCodeSuccessScreen p {
+  font-family: Nunito;
+  font-size: 12px;
+  font-weight: 500;
+  /* line-height: 16.37px; */
+  text-align: center;
+  margin: 0 0 5px 0;
+  color: #4D4D4D;
+
+
+
+  span {
+    font-family: Nunito;
+    font-size: 12px;
+    font-weight: 600;
+    color: #02ABC5;
+    cursor: pointer;
+    /* line-height: 16.37px; */
+    text-align: center;
+
+
+  }
+
+}
+
+
+.inputs {
+  /* margin-top: 10px; */
+  display: flex;
+  gap: 5px;
+}
+
+.inputs input {
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #02ABC5;
+  margin: 0 0px;
+  color: #02ABC5;
+
+}
+
+.inputs input:focus {
+  border-bottom: 1.5px solid royalblue;
+  outline: none;
+}
+
+.fontSize12px {
+  font-size: 12px;
+}
+
+.paragraph {
+  font-family: Nunito;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.37px;
+  text-align: left;
+}
+
+.success_heading {
+  font-family: Nunito;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30.01px;
+  text-align: center;
+  color: #02ABC5;
+
+}

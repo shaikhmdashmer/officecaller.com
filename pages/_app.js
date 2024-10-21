@@ -5,6 +5,9 @@ import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 import styles from '../styles/custom.css'
+import "@/styles/chatbot.css"
+import "primeicons/primeicons.css";
+import "primereact/resources/themes/saga-blue/theme.css";
 import '../scripts/custom-scripts.js'
 import 'react-phone-input-2/lib/style.css'
 

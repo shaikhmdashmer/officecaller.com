@@ -20,13 +20,37 @@ export default function ContactFormFooter() {
   const [Service, setService] = useState();
   const [subject, setSubject] = useState();
 
+  const [dropDownForm, setDropDown] = useState();
+
+  const [ipData, setIpData] = useState(null);
+  const [error, setError] = useState('');
+
+
+  const [selectedOption, setSelectedOption] = useState('');
+  const [otherInputVisible, setOtherInputVisible] = useState(false);
+  const [otherInputValue, setOtherInputValue] = useState('');
+
+  const handleSelectChange = (e) => {
+    const value = e.target.value;
+    setSelectedOption(value);
+    if (value === 'Other') {
+      setOtherInputVisible(true);
+    } else {
+      setOtherInputVisible(false);
+      setOtherInputValue(e.target.value);
+    }
+  };
+
+  const handleOtherInputChange = (e) => {
+    setOtherInputValue(e.target.value);
+  };
+
 
   const handleSubmit3 = async (e) => {
  
     e.preventDefault();
     setLoader(true);
-
-    setuserMsg("Loading........")
+    setuserMsg("Loading..........");
     const ipResponse = await fetch('https://api.ipify.org?format=json');
     const ipData = await ipResponse.json();
   
@@ -49,10 +73,11 @@ export default function ContactFormFooter() {
         country_code: userApi ? userApi?.location?.calling_code : "Na",
         country_name: userApi ? userApi?.country_name : 'NA',
         user_mobile: phoneField,
-        user_subject: subject,
+        // user_subject: subject,
+        user_subject:  `${selectedOption,otherInputValue}`,
         user_message: message,
-        inquiry_through: UTM ? UTM : "No UTM",
-        website_source: "Office Caller",
+        inquiry_through: UTM ? UTM : "contact_form_btn",
+        website_source: "officecaller.com",
         apikey: "7dac0fcac909b349",
         // recaptchaToken: recaptchaToken,
         Service: Service,
@@ -60,16 +85,81 @@ export default function ContactFormFooter() {
     }).then((res) => {
       console.log("Response received");
       if (res.status === 200) {
-        console.log("Response succeeded!");
-        setuserMsg("");
-        setLoader(false);
-        router.push("/thank-you"); // Replace "/next-page-url" with your actual next page URL
+        mailFunction()
+       
       } else {
         console.log("Something went wrong...please check");
         setLoader(false);
       }
     });
   };
+
+
+
+
+  const mailFunction = async () => {
+    const requestData = {
+      name: name,
+      email: email,
+      pageURL: "officecaller.com",
+    };
+
+    try {
+      const response = await fetch('https://costcalculator.redbytes.in:3012/send-feedback-mail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestData),
+      });
+
+      const result = await response.json();
+      setuserMsg("Check You Email");
+      router.push("/thank-you"); 
+      // console.log('Success:', result);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch('https://wp.redbytes.in/graphql', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            query: `
+            query NewQuery {
+              contactformdropdowns(first: 50) {
+                nodes {
+                  title
+                  contacformdropdownredio {
+                    contacformdropdownredio
+                  }
+                }
+              }
+            }
+            `,
+          }),
+        });
+
+        const responseData = await response.json();
+        const fiterDRArray = responseData?.data?.contactformdropdowns?.nodes?.filter(data => data.title == 'officecaller.com')
+        console.log("fiterDRArray", fiterDRArray)
+        setDropDown(fiterDRArray[0].contacformdropdownredio);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
 
   return (
     <>
@@ -118,15 +208,24 @@ export default function ContactFormFooter() {
                 </div>
 
                 <div className="form-group my-2 has-validation">
-                  <input
-                    required
-                    name="text"
-                    onChange={(e) => setSubject(e.target.value)}
-                    type="subject"
-                    className="form-control   mb-3"
-                    placeholder="Enter your Subject"
-                  />
-                  <div className="invalid-feedback">Please enter subject</div>
+                <select className="form-control mediaWay mb-3" onChange={handleSelectChange}>
+                    <option selected disabled>Subject</option>
+                    {dropDownForm?.contacformdropdownredio.map((item, index) => (
+                      <option key={index} value={item}>
+                        {item}
+                      </option>
+                    ))}
+                  </select>
+                  {otherInputVisible && (
+                    <input
+                      type="text"
+                      className="form-control other-sbj form-group my-2 has-validation"
+                      placeholder="Enter other subject"
+                      value={otherInputValue}
+                      onChange={handleOtherInputChange}
+                    />
+                  )}
+                 
                 </div>
 
                 <div className="form-group my-2 has-validation">
@@ -136,7 +235,7 @@ export default function ContactFormFooter() {
                     onChange={(e) => setMessage(e.target.value)}
                     className="form-control mb-3"
                     rows="5"
-                    placeholder="Enter your Message..."
+                    placeholder="Enter your Message...."
                   ></textarea>
                   <div className="invalid-feedback">Please enter message</div>
                 </div>
@@ -145,6 +244,7 @@ export default function ContactFormFooter() {
                   <button
                     type="submit"
                     className="btn btn-primary btn-lg btn-rounded btn-lgtleftright"
+                    disabled={getLoader}
                   >
                     Submit <i className="fa fa-arrow-right"></i>
                   </button>

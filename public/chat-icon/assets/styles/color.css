@@ -1,0 +1,29 @@
+.textColor {
+    color: #02ABC5;
+}
+
+.card_bg_color {
+    background-color: #CCEEF3;
+}
+
+.button {
+    width: 185px;
+    height: 37px;
+    background-color: #02ABC5;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 0px solid white;
+}
+
+.buttonDeActivate {
+    width: 185px;
+    color: #02ABC5;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.color_white {
+    color: #FFFFFF;
+}

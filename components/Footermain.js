@@ -5,6 +5,8 @@ import logoPicFooter from "/images/logo-footer.svg";
 import ContactFormFooter from "./Enquiryfooter";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import { useRouter } from "next/router";
+import ChatBot from "@/chatbot/chatboot";
+
 
 export default function Footermain() {
   const router = useRouter();
@@ -82,7 +84,7 @@ export default function Footermain() {
                     </span>
                   </div>
                   <div>
-                    <p>Phone: +91 81138 62000, +1 92955 21900</p>
+                    <p>Phone: +91 81138 62000</p>
                   </div>
                 </div>
                 <div>
@@ -222,6 +224,8 @@ export default function Footermain() {
       <a className="scroll-top-btn" href="#">
         <i className="fa fa-arrow-up"></i>
       </a>
+
+      <ChatBot/>
     </>
   );
 }

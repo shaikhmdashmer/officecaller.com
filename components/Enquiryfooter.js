@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import PhoneInput from "react-phone-input-2";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactFormFooter() {
   const QuryUrl = useRouter();
@@ -45,11 +46,23 @@ export default function ContactFormFooter() {
     setOtherInputValue(e.target.value);
   };
 
+// ✅ CAPTCHA STATE (Frontend Only)
+  const [captchaValue, setCaptchaValue] = useState(null);
+  const [captchaError, setCaptchaError] = useState("");
 
+  // ✅ Handle CAPTCHA change
+  const handleCaptchaChange = (value) => {
+    setCaptchaValue(value);
+    setCaptchaError("");
+  };
   const handleSubmit3 = async (e) => {
  
     e.preventDefault();
     setLoader(true);
+        if (!captchaValue) {
+      setCaptchaError("Please verify that you are not a robot.");
+      return;
+    }
     setuserMsg("Loading..........");
     const ipResponse = await fetch('https://api.ipify.org?format=json');
     const ipData = await ipResponse.json();
@@ -239,7 +252,28 @@ export default function ContactFormFooter() {
                   ></textarea>
                   <div className="invalid-feedback">Please enter message</div>
                 </div>
+{/* ✅ GOOGLE reCAPTCHA v2 */}
+            <div className="form-group my-3 d-flex justify-content-start">
+              <ReCAPTCHA
+                sitekey="6LfLp64sAAAAAFEKuK4Xlclj4XdRR27s1YasyJ9z"
+                onChange={handleCaptchaChange}
+                theme="light"
+              />
+            </div>
 
+            {/* ✅ CAPTCHA ERROR MESSAGE */}
+            {captchaError && (
+              <p
+                style={{
+                  color: "red",
+                  fontSize: "12px",
+                  textAlign: "start",
+                  marginTop: "-10px",
+                }}
+              >
+                {captchaError}
+              </p>
+            )}
                 <div className="submitBtn">
                   <button
                     type="submit"
